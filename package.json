@@ -1,0 +1,50 @@
+{
+  "name": "secret-companions",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "nodemon --ext cjs,js,json server.cjs",
+    "dev:all": "concurrently -k -n WEB,API -c blue,magenta \"vite\" \"nodemon --ext cjs,js,json server.cjs\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "api": "node server.cjs",
+    "start": "node server.cjs",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "8.3.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "node-fetch": "^2.7.0",
+    "nodemailer": "^7.0.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "stripe": "^16.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.11",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.14",
+    "vite": "^7.1.7"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
