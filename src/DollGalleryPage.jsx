@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ""https://secret-companions.onrender.com";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://secret-companions.onrender.com";
 
 /* ============================
    Image imports (must exist in /src/assets)
