@@ -139,6 +139,7 @@ Do not repeat your introduction unless the user specifically asks who you are.
 Keep answers short (1–2 sentences).
 Repeat the reservation instructions if asked.
 Answer directly.
+STOP TALKING IF THE USER SAYS BYE!
 No hashtags. No brackets. No stage directions.`
 
 ].join("\n");
