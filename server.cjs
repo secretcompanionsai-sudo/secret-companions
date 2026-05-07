@@ -9,6 +9,8 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const app = express();
 
+app.set("trust proxy", 1);
+
 /* ---------- Rate limiting ---------- */
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
