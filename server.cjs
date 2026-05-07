@@ -201,7 +201,16 @@ function validateReservationBody(req, res, next) {
 }
 
 /* ---------- Health check ---------- */
-app.get("/api/ok", verifyInternalKey, (_req, res) => res.json({ ok: true }));
+app.get("/api/health", (_req, res) => {
+  res.json({
+    ok: true,
+    status: "healthy",
+  });
+});
+
+app.get("/api/ok", verifyInternalKey, (_req, res) =>
+  res.json({ ok: true })
+);
 
 /* ---------- ElevenLabs Voice ---------- */
 app.post("/api/voice", verifyInternalKey, aiLimiter, validateVoiceBody, async (req, res) => {
