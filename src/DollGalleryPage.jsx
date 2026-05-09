@@ -262,7 +262,7 @@ function SimplePage({ title, children, onBack }) {
 /* ============================
    Voice assistant modal (intelligent)
    ============================ */
-function AIDollVoiceModal({ doll, persona, onClose }) {
+function AIDollVoiceModal({ doll, persona, personaSummary, onClose }) {
   const [supported, setSupported] = useState(false);
   const [listening, setListening] = useState(false);
   const [lastHeard, setLastHeard] = useState("");
@@ -660,7 +660,14 @@ const BASE_PRICE = 100;
         </div>
       </aside>
 
-      {voiceOpen && <AIDollVoiceModal doll={doll} persona={persona} onClose={() => setVoiceOpen(false)} />}
+      {voiceOpen && (
+  <AIDollVoiceModal
+    doll={doll}
+    persona={persona}
+    personaSummary={personaSummary}
+    onClose={() => setVoiceOpen(false)}
+  />
+)}
     </main>
   );
 }
