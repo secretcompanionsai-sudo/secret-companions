@@ -486,6 +486,17 @@ function DetailsView({ doll, persona, onPersonaChange, onBack, onReserve }) {
 const BASE_PRICE = 100;
   const [voiceOpen, setVoiceOpen] = useState(false);
 
+  const personaSummary = [
+  persona?.age && `Age: ${persona.age}`,
+  persona?.personality && `Personality: ${persona.personality}`,
+  persona?.nationality && `Nationality: ${persona.nationality}`,
+  persona?.background && `Background: ${persona.background}`,
+  persona?.interest && `Interest: ${persona.interest}`,
+  persona?.professional && `Profession: ${persona.professional}`,
+  persona?.mood && `Mood: ${persona.mood}`,
+  persona?.traits?.length && `Traits: ${persona.traits.join(", ")}`
+].filter(Boolean).join(" | ");
+
   function selectSingle(key, value) {
     onPersonaChange({ ...persona, [key]: persona[key] === value ? "" : value });
   }
