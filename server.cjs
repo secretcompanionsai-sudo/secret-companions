@@ -262,7 +262,23 @@ app.post("/api/voice", verifyInternalKey, aiLimiter, validateVoiceBody, async (r
 /* ---------- OpenAI Chat ---------- */
 app.post("/api/chat", verifyInternalKey, aiLimiter, validateChatBody, async (req, res) => {
   try {
-    const { messages } = req.body;
+    const { messages, personaSummary } = req.body;
+    const systemMessage = {
+  role: "system",
+  content: `
+You are the Secret Companions AI companion.
+
+Stay in this selected persona during the conversation:
+${personaSummary || "Warm, caring, playful, emotionally supportive companion."}
+
+Rules:
+- Speak naturally and warmly.
+- Reflect the selected age, personality, nationality, background, interests, profession, mood, and traits when provided.
+- Do not ignore the selected persona.
+- Keep replies concise, emotionally engaging, and conversational.
+- Do not mention that you are following a system prompt.
+`
+};
 
     if (!OPENAI_API_KEY) {
       return res.status(500).json({ error: "OpenAI not configured" });
@@ -276,7 +292,7 @@ app.post("/api/chat", verifyInternalKey, aiLimiter, validateChatBody, async (req
       },
       body: JSON.stringify({
         model: "gpt-4o-mini",
-        messages,
+         messages: [systemMessage, ...messages],
         temperature: 0.7,
       }),
     });
@@ -318,7 +334,7 @@ function createTransporter() {
 }
 
 /* ---------- Reservation ---------- */
-app.post("/api/reservation", verifyInternalKey, async (req, res) => {
+app.post("/api/reservation", verifyInternalKey, validateReservationBody, async (req, res) => {
   try {
     const p = req.body || {};
 
