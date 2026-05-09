@@ -352,7 +352,7 @@ audio.play();
   },
   body: JSON.stringify({
   messages,
-  personaSummary
+  personaSummary: typeof personaSummary !== "undefined" ? personaSummary : ""
 })
 });
     if (!r.ok) {
