@@ -350,7 +350,10 @@ audio.play();
     "Content-Type": "application/json",
     "x-api-key": import.meta.env.VITE_INTERNAL_API_KEY
   },
-  body: JSON.stringify({ messages })
+  body: JSON.stringify({
+  messages,
+  personaSummary
+})
 });
     if (!r.ok) {
   const errorText = await r.text();
