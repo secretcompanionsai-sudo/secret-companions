@@ -653,9 +653,7 @@ const BASE_PRICE = 100;
           <button className="w-full rounded-xl bg-white text-black py-3 font-medium hover:bg-neutral-200" onClick={onReserve}>
             Reserve now
           </button>
-          <button className="w-full rounded-xl border border-neutral-700 py-3 hover:bg-neutral-800" onClick={() => alert("Added to wishlist (mock)")}>
-            Add to wishlist
-          </button>
+          
           <p className="text-xs text-neutral-400">Statement shows “DCS Services”.</p>
         </div>
       </aside>
