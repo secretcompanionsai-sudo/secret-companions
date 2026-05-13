@@ -43,9 +43,9 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const stripe = STRIPE_SECRET_KEY ? new Stripe(STRIPE_SECRET_KEY) : null;
 
 /* ---------- Stripe Payment Links ---------- */
-const motel_LINK = "https://buy.stripe.com/test_7sY3cx3Fc3YP3HH6hF7Vm02";
-const Storage_LINK = "https://buy.stripe.com/test_bJefZj3Fc52Tgut7lJ7Vm01";
-const DELIVERY_LINK = "https://buy.stripe.com/test_bJe7sN0t0eDt0vv35t7Vm00";
+const motel_LINK = "https://buy.stripe.com/6oUfZi83B2gTbwm0Z1e3e03";
+const Storage_LINK = "https://buy.stripe.com/fZubJ26ZxcVx6c20Z1e3e01";
+const DELIVERY_LINK = "https://buy.stripe.com/3cI8wQ0B9bRtdEuePRe3e00";
 
 /* ---------- Middleware ---------- */
 app.use(helmet());
